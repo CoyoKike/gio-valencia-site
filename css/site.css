@@ -67,14 +67,15 @@ button{font:inherit;color:inherit;cursor:pointer}
 .hero-hint::after{content:"";display:inline-block;width:1px;height:26px;background:#fff;margin-left:10px;vertical-align:middle;animation:hint 1.8s var(--ease) infinite}
 @keyframes hint{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 @media (max-width:700px){.hero-swap{left:var(--g);right:auto;text-align:left;top:110px;width:auto}.swap{left:0;right:auto}}
-.js.loading .hero-title .ln>span,.js.loading .hero-vote span,.js.loading .hero-sub span{transform:translateY(110%)}
+.js.loading .hero-title .ln>span,.js.loading .hero-vote span,.js.loading .hero-sub span{transform:translateY(160%)}
+.js.loading .hero-hint{opacity:0}
 .js.intro .hero-title .ln>span{animation:rise 1.2s var(--ease) both}
 .js.intro .hero-title .ln:nth-child(2)>span{animation-delay:.12s}
 .js.intro .hero-vote span{animation:rise 1s .05s var(--ease) both}
 .js.intro .hero-sub span{animation:rise 1s .4s var(--ease) both}
 .js.intro .hero-canvas{animation:zoomin 2.4s var(--ease) both}
-@keyframes rise{from{transform:translateY(110%)}to{transform:none}}
-@keyframes zoomin{from{transform:scale(1.15);opacity:0}to{transform:none;opacity:1}}
+@keyframes rise{from{transform:translateY(160%)}to{transform:none}}
+@keyframes zoomin{from{transform:scale(1.12)}to{transform:none}}
 
 /* loading screen: the sign draws itself */
 html.loading,html.loading body{overflow:hidden;height:100%}

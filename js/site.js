@@ -69,7 +69,23 @@ for (var p = 0; p < 40; p++) load(p);
 function ready(){ var n = 0; for (var i = 0; i < 40; i++) if (frames[i] && frames[i].ok) n++; return n >= 30; }
 function box(a, b){ var r1 = a.getBoundingClientRect(), r2 = b.getBoundingClientRect(); return { left: r1.left, top: Math.min(r1.top, r2.top), width: r2.right - r1.left, height: Math.max(r1.bottom, r2.bottom) - Math.min(r1.top, r2.top) }; }
 
+function start(){
+  html.classList.add('intro'); heroTl.invalidate();
+  scrollTo(0, 0); if (lenis) { lenis.scrollTo(0, { immediate: true, force: true }); lenis.start(); }
+  ScrollTrigger.refresh();
+  setTimeout(function(){ html.classList.remove('intro'); }, 3000);
+}
+function liftPhone(){
+  html.classList.remove('loading');
+  gsap.timeline({ onComplete: function(){ loader.remove(); } })
+    .to('.sign-art, .sign-urls, #signCursor', { opacity: 0, duration: 0.35, ease: 'power2.in' }, 0)
+    .to(sign, { y: -40, duration: 0.5, ease: 'power2.in' }, 0.1)
+    .to(loader, { clipPath: 'inset(0% 0% 100% 0%)', duration: 1.1, ease: 'expo.inOut' }, 0.35)
+    .to(sign, { y: -innerHeight * 0.6, opacity: 0, duration: 1.0, ease: 'expo.inOut' }, 0.4)
+    .add(start, 0.75);
+}
 function lift(){
+  if (innerWidth <= 700) return liftPhone();
   var brand = $('.brand'), from = box($('.sign-vote'), $('.sign-name'));
   html.classList.remove('loading');
   gsap.set(brand, { opacity: 0 });
@@ -87,12 +103,7 @@ function lift(){
     .to(sign, { scale: 1.03, opacity: 0, duration: 0.9, ease: 'power3.in' }, 0.15)
     .to(fly, { x: to.left - from.left, y: to.top - from.top, scale: sc, color: '#ffffff', duration: 1.25, ease: 'expo.inOut' }, 0.2)
     .to(loader, { opacity: 0, duration: 1, ease: 'power2.inOut' }, 0.55)
-    .add(function(){
-      html.classList.add('intro'); heroTl.invalidate();
-      scrollTo(0, 0); if (lenis) { lenis.scrollTo(0, { immediate: true, force: true }); lenis.start(); }
-      ScrollTrigger.refresh();
-      setTimeout(function(){ html.classList.remove('intro'); }, 3000);
-    }, 0.75)
+    .add(start, 0.75)
     .to(brand, { opacity: 1, duration: 0.3 }, 1.35)
     .to(fly, { opacity: 0, duration: 0.25 }, 1.4);
 }
@@ -110,7 +121,22 @@ if (reduce) { setTimeout(lift, 800); } else {
     .fromTo('.sign-sub', { y: 16, opacity: 0, letterSpacing: '.2em' }, { y: 0, opacity: 1, letterSpacing: '.05em', duration: 0.9, ease: 'power3.out' }, 1.5);
   // the ground line is drawn by an orange pen; each figure is drawn as the pen passes it
   var gl = ground.querySelector('[pathLength]'), pen = { t: 0 };
+  // phones: the drawing is shown up close and the view follows the pen, then pulls back to the whole street
+  var phone = innerWidth <= 700, S = 2.4, wrap = $('#signArt');
+  if (phone) {
+    var baseW = wrap.clientWidth, baseH = art.getBoundingClientRect().height;
+    wrap.style.overflow = 'hidden'; wrap.style.height = baseH * S + 'px';
+    gsap.set(art, { scale: S, transformOrigin: '0 0', x: 0 });
+    tl.to(wrap, { height: baseH, duration: 1.2, ease: 'power3.inOut' }, DRAW + 0.1)
+      .to(art, { scale: 1, x: 0, duration: 1.2, ease: 'power3.inOut' }, DRAW + 0.1);
+  }
+  function follow(){
+    if (!phone) return;
+    var penLocal = (20 + 1600 * pen.t) * (baseW / 1640) * S;
+    gsap.set(art, { x: Math.max(baseW - baseW * S, Math.min(0, baseW / 2 - penLocal)) });
+  }
   function placePen(){
+    follow();
     var sr = sign.getBoundingClientRect(), ar = art.getBoundingClientRect(), k = ar.width / 1640;
     gsap.set(cursor, { left: ar.left - sr.left + (20 + 1600 * pen.t) * k, top: ar.top - sr.top + 330 * k });
   }
