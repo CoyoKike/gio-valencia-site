@@ -75,6 +75,20 @@ if (!reduce) {
       scrollTrigger: { trigger: box, start: 'top bottom', end: 'bottom top', scrub: true } });
   });
 
+  // your voice: photo wipes open, zooms out with scroll, drifts with the mouse; title rises after
+  var vm = $('.voice-media'), vimg = $('.voice-media img');
+  gsap.set(vimg, { scale: 1.12 });
+  gsap.timeline({ scrollTrigger: { trigger: '.voice', start: 'top 75%' } })
+    .fromTo(vm, { clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.1, ease: 'power3.inOut' })
+    .from('.voice-title > *', { y: 30, opacity: 0, stagger: 0.1, duration: 0.9, ease: 'power3.out' }, 0.6);
+  gsap.fromTo(vimg, { yPercent: -5, scale: 1.12 }, { yPercent: 5, scale: 1.04, ease: 'none',
+    scrollTrigger: { trigger: '.voice', start: 'top bottom', end: 'bottom top', scrub: true } });
+  if (matchMedia('(hover: hover)').matches) {
+    var mx = gsap.quickTo(vimg, 'x', { duration: 1.2, ease: 'power3.out' }), my = gsap.quickTo('.voice-title', 'y', { duration: 1.2, ease: 'power3.out' });
+    vm.addEventListener('mousemove', function(e){ var r = vm.getBoundingClientRect(), dx = (e.clientX - r.left) / r.width - 0.5, dy = (e.clientY - r.top) / r.height - 0.5; mx(-dx * 12); my(dy * -6); });
+    vm.addEventListener('mouseleave', function(){ mx(0); my(0); });
+  }
+
   // about: the two photos move at different speeds
   gsap.fromTo('.ap-main', { y: 40 }, { y: -40, ease: 'none', scrollTrigger: { trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true } });
   gsap.fromTo('.ap-small', { y: 110 }, { y: -70, ease: 'none', scrollTrigger: { trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true } });

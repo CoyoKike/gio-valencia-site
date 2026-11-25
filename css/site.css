@@ -22,7 +22,7 @@ ul,ol{list-style:none}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 em{font-family:var(--text);font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sr{position:absolute;left:0;top:0;width:1px!important;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .mono{font-family:var(--disp);font-stretch:118%;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .skip{position:fixed;left:12px;top:-60px;z-index:200;background:var(--blue);color:#fff;padding:10px 14px}
 .skip:focus{top:12px}
@@ -66,7 +66,7 @@ em{font-family:var(--text);font-style:italic;font-weight:400;text-transform:none
 
 /* hero: slanted photo left, blue panel right */
 .hero{position:relative;display:grid;grid-template-columns:minmax(0,44fr) minmax(0,56fr);min-height:100vh;min-height:100svh;padding-top:var(--head);background:var(--blue);color:#fff;overflow:hidden}
-.hero-photo{position:relative;clip-path:polygon(0 0,100% 0,84% 100%,0 100%);background:#222}
+.hero-photo{position:relative;overflow:hidden;clip-path:polygon(0 0,100% 0,84% 100%,0 100%);background:#222}
 .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 30%;transform-origin:50% 30%;will-change:transform}
 .hero-panel{position:relative;padding:clamp(36px,6vh,80px) var(--g) clamp(36px,6vh,70px) clamp(8px,2vw,40px);display:flex;flex-direction:column;justify-content:center}
 .hero-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(255,255,255,.08),transparent 60%);pointer-events:none}
@@ -156,12 +156,24 @@ em{font-family:var(--text);font-style:italic;font-weight:400;text-transform:none
 @media (max-width:1100px){.pillars{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.pillars{grid-template-columns:1fr}.pillar-img{aspect-ratio:4/3}}
 
-/* your voice */
-.voice{padding:clamp(90px,13vh,150px) var(--g);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,80px);align-items:start}
+/* your voice: full-height photo on the left with the title over it, instructions + form on the right */
+.voice{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:stretch;background:#fff}
+.voice-media{position:relative;overflow:hidden;min-height:560px}
+.voice-media img{position:absolute;left:-4%;top:-12%;width:108%;height:124%;object-fit:cover;object-position:50% 50%;will-change:transform}
+.voice-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,69,0) 35%,rgba(13,27,69,.85) 100%)}
+.voice-title{position:absolute;z-index:1;left:clamp(20px,3vw,48px);right:clamp(20px,3vw,48px);bottom:clamp(24px,4vw,52px);color:#fff}
+.voice-title .label{color:#dbe3f7;margin-bottom:12px}
+.voice-title .h2{color:#fff;font-size:clamp(52px,6.4vw,112px)}
+.voice-title .h2 em{color:#fff}
+.voice-side{padding:clamp(70px,11vh,130px) var(--g)}
+.voice-how{font-family:var(--disp);font-weight:800;font-stretch:96%;font-size:clamp(22px,2vw,30px);line-height:1.15;color:var(--ink);max-width:30ch;margin-bottom:26px}
 .survey{display:flex;flex-direction:column;gap:20px}
 .survey .btn{align-self:flex-start;padding:16px 30px;font-size:15px}
-.survey .chips label span{font-size:16px;padding:11px 16px}
-@media (max-width:900px){.voice{grid-template-columns:1fr}}
+.survey .chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.survey .chips label,.survey .chips label span{display:flex;width:100%;height:100%}
+.survey .chips label span{font-size:16px;padding:14px 16px;align-items:center}
+@media (max-width:900px){.voice{grid-template-columns:1fr}.voice-media{min-height:0;aspect-ratio:4/3}}
+@media (max-width:600px){.survey .chips{grid-template-columns:1fr 1fr}.survey .chips label span{font-size:14px;padding:12px}}
 
 /* wide */
 .wide-frame{position:relative;height:100vh;height:100svh;overflow:hidden;will-change:clip-path}
@@ -208,23 +220,23 @@ em{font-family:var(--text);font-style:italic;font-weight:400;text-transform:none
 @media (max-width:900px){.give{grid-template-columns:1fr}}
 
 /* footer: the sign sits in the corner */
-.foot{background:#fff;color:var(--blue);padding:clamp(60px,9vh,100px) var(--g) 28px;border-top:2px solid var(--blue)}
-.foot-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:40px;align-items:end}
-.foot-name{font-family:var(--disp);font-weight:900;font-stretch:88%;text-transform:uppercase;font-size:clamp(48px,7vw,110px);line-height:.86}
-.foot-sub{font-family:var(--disp);font-weight:800;font-size:clamp(13px,1.4vw,20px);letter-spacing:.06em;text-transform:uppercase;margin-top:10px}
-.foot-nav{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px}
+.foot{background:#fff;color:var(--blue);padding:22px var(--g) 18px;border-top:2px solid var(--blue)}
+.foot-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,290px);gap:28px;align-items:center}
+.foot-name{font-family:var(--disp);font-weight:900;font-stretch:88%;text-transform:uppercase;font-size:clamp(30px,3.2vw,48px);line-height:.9}
+.foot-sub{font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+.foot-nav{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:10px}
 .foot-nav a,.foot-nav button{background:none;border:0;padding:0;font-family:var(--disp);font-stretch:108%;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--blue)}
 .foot-nav a:hover,.foot-nav button:hover{text-decoration:underline;text-underline-offset:4px}
-.foot-sign{justify-self:end;width:100%;border:2px solid var(--blue);outline:1.5px solid var(--blue);outline-offset:-8px;padding:22px 24px 16px;text-align:center;font-family:var(--disp);text-transform:uppercase;box-shadow:0 24px 50px -24px rgba(13,27,69,.35)}
+.foot-sign{justify-self:end;width:100%;border:2px solid var(--blue);outline:1.5px solid var(--blue);outline-offset:-7px;padding:10px 14px 8px;text-align:center;font-family:var(--disp);text-transform:uppercase;box-shadow:0 24px 50px -24px rgba(13,27,69,.35)}
 .fs-top{display:flex;justify-content:center;align-items:baseline;gap:.35em;line-height:.9}
 .fs-top span{font-weight:900;font-size:14px}
-.fs-top b{font-weight:900;font-stretch:96%;font-size:clamp(26px,2.6vw,38px)}
+.fs-top b{font-weight:900;font-stretch:96%;font-size:24px}
 .fs-sub{font-weight:800;font-size:11px;letter-spacing:.06em;margin-top:6px}
 .lineart{width:100%;height:auto;stroke:var(--blue);stroke-width:2.8;overflow:visible}
 .lineart [pathLength]{stroke-dasharray:1;stroke-dashoffset:1}
 .lineart .la:last-child{stroke:var(--orange)}
-.lineart.static{stroke-width:3.4;margin-top:10px}
-.paid{margin-top:34px;display:inline-block;border:1.5px solid var(--blue);padding:8px 12px;font-family:var(--disp);font-stretch:108%;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.lineart.static{stroke-width:3.6;margin-top:6px}
+.paid{margin-top:12px;display:inline-block;border:1.5px solid var(--blue);padding:8px 12px;font-family:var(--disp);font-stretch:108%;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 @media (max-width:860px){.foot-main{grid-template-columns:1fr}.foot-sign{justify-self:stretch}}
 
 /* dialogs */
@@ -253,6 +265,7 @@ body.modal-open{overflow:hidden}
 
 /* nothing may widen the page on phones (it made the browser zoom out and cut the sign off) */
 html,body{overflow-x:clip}
+.loader,.sign{max-width:100vw}
 
 /* loading screen: the sign draws itself */
 html.loading,html.loading body{overflow:hidden;height:100%}
