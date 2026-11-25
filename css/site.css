@@ -242,6 +242,9 @@ em{font-family:var(--text);font-style:italic;font-weight:400;text-transform:none
 @keyframes pop{from{opacity:0;transform:translateY(30px) scale(.97)}}
 body.modal-open{overflow:hidden}
 
+/* nothing may widen the page on phones (it made the browser zoom out and cut the sign off) */
+html,body{overflow-x:clip}
+
 /* loading screen: the sign draws itself */
 html.loading,html.loading body{overflow:hidden;height:100%}
 .loader{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px var(--g);
