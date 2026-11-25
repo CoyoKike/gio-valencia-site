@@ -51,6 +51,36 @@ if (!reduce) {
     scrollTrigger: { trigger: '#wideFrame', start: 'top bottom', end: 'bottom top', scrub: true } });
 }
 
+/* ---------- motion: subtle depth on the hero, cards and About photos ---------- */
+if (!reduce) {
+  // hero: photo drifts and zooms slowly, copy lifts a little faster
+  gsap.to('.hero-photo img', { yPercent: 12, scale: 1.12, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.hero-panel', { y: -70, ease: 'none',
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+
+  // cards: photo wipes up from the bottom, one after another, then drifts inside its frame
+  gsap.set('.pillar', { opacity: 0, y: 60 });
+  gsap.set('.pillar-img', { clipPath: 'inset(100% 0% 0% 0%)' });
+  gsap.set('.pillar-img img', { scale: 1.25 });
+  ScrollTrigger.batch('.pillar', { start: 'top 85%', once: true, onEnter: function(els){
+    var imgs = els.map(function(e){ return e.querySelector('.pillar-img'); });
+    gsap.timeline()
+      .to(els, { opacity: 1, y: 0, duration: 1, stagger: 0.12, ease: 'power3.out' }, 0)
+      .to(imgs, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, stagger: 0.12, ease: 'expo.inOut' }, 0.1)
+      .to(imgs.map(function(i){ return i.querySelector('img'); }), { scale: 1.08, duration: 1.6, stagger: 0.12, ease: 'power3.out' }, 0.1);
+  } });
+  $$('.pillar-img').forEach(function(box){
+    gsap.fromTo(box.querySelector('img'), { yPercent: -5 }, { yPercent: 5, ease: 'none',
+      scrollTrigger: { trigger: box, start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+
+  // about: the two photos move at different speeds
+  gsap.fromTo('.ap-main', { y: 40 }, { y: -40, ease: 'none', scrollTrigger: { trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.fromTo('.ap-small', { y: 110 }, { y: -70, ease: 'none', scrollTrigger: { trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.from('.about-photos', { opacity: 0, x: -40, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.about', start: 'top 75%' } });
+}
+
 /* ---------- dialogs ---------- */
 var openModal = null, lastFocus = null;
 function show(name){
