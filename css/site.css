@@ -166,7 +166,7 @@ em{font-family:var(--text);font-style:italic;font-weight:400;text-transform:none
 .voice-title .h2{color:#fff;font-size:clamp(52px,6.4vw,112px)}
 .voice-title .h2 em{color:#fff}
 .voice-side{padding:clamp(70px,11vh,130px) var(--g)}
-.voice-how{font-family:var(--disp);font-weight:800;font-stretch:96%;font-size:clamp(22px,2vw,30px);line-height:1.15;color:var(--ink);max-width:30ch;margin-bottom:26px}
+.voice-how{font-family:var(--disp);font-weight:800;font-stretch:96%;font-size:clamp(22px,2vw,30px);line-height:1.15;color:var(--blue);max-width:30ch;margin-bottom:26px}
 .survey{display:flex;flex-direction:column;gap:20px}
 .survey .btn{align-self:flex-start;padding:16px 30px;font-size:15px}
 .survey .chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
