@@ -91,7 +91,7 @@ if (!reduce) {
 
   // about: the two photos move at different speeds
   gsap.fromTo('.ap-main', { y: 40 }, { y: -40, ease: 'none', scrollTrigger: { trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true } });
-  gsap.fromTo('.ap-small', { y: 110 }, { y: -70, ease: 'none', scrollTrigger: { trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.fromTo('.ap-small', { y: 30 }, { y: -30, stagger: 0.15, ease: 'none', scrollTrigger: { trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true } });
   gsap.from('.about-photos', { opacity: 0, x: -40, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.about', start: 'top 75%' } });
 }
 
