@@ -306,3 +306,11 @@ html.loading,html.loading body{overflow:hidden;height:100%}
   .sign-vote,.sign-name,.sign-sub{opacity:1!important}
   .lineart [pathLength],.sign-frame rect{stroke-dashoffset:0}
 }
+
+/* phone: less empty space around Your voice, keep heads in the photo */
+@media (max-width:900px){
+  .stands{padding-bottom:48px}
+  .voice-media{aspect-ratio:1/1}
+  .voice-media img{top:-4%;height:108%}
+  .voice-side{padding-top:36px;padding-bottom:64px}
+}
