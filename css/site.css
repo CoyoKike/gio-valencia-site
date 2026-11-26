@@ -314,3 +314,10 @@ html.loading,html.loading body{overflow:hidden;height:100%}
   .voice-media img{top:-4%;height:108%}
   .voice-side{padding-top:36px;padding-bottom:64px}
 }
+
+/* phone: tighter space between sections */
+@media (max-width:900px){
+  .ways,.stands,.about,.share{padding-top:56px;padding-bottom:56px}
+  .about{gap:32px}
+  .facts{gap:10px}
+}
