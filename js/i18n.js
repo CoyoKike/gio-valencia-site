@@ -27,7 +27,7 @@ es: {
   lbl4:'02 / Sobre Gio', aboutH:'Primero escucho. <em>Luego lo construimos juntos.</em>',
   about1:'Gio llegó a Boston desde Colombia en 2006. Desde entonces ha pasado sus días con los vecinos: escuchando, organizando y trabajando juntos en lo que les importa.',
  
-  f1:'Vecino', f1s:'Vive en West Roxbury. Sus hijos estudian en las Escuelas Públicas de Boston.', f2:'Organizador', f2s:'Toca puertas y se sienta en la mesa de la cocina para escuchar lo que la gente necesita.', f3:'Urbanista', f3s:'Ayuda a los vecinos a planear viviendas que puedan pagar y calles que funcionen.',
+  f1:'Vecino', f1s:'Vive en West Roxbury. Sus hijos estudian en las Escuelas Públicas de Boston.', f2:'Organizador', f2s:'Toca puertas y se sienta en la mesa de la cocina para escuchar lo que la gente necesita.', f3:'Urbanista', f3s:'Ayuda a los vecinos a planear viviendas que puedan pagar y calles que funcionen.', galH:'En la comunidad', c1:'Hablando con Telemundo Boston', c2:'Feria Mundial del Barrio Latino', c3:'Limbo en Porchfest', c4:'Celebrando con los vecinos', c5:'Una caminata por la paz', c6:'Premio de Desarrollo Comunitario de MACDC',
   lbl5:'03 / Corre la voz', shareH:'Cuéntale a <em>un amigo.</em>', shareP:'Envía la campaña de Gio a personas a quienes les importa Boston. Nosotros escribimos el correo, tú lo envías.',
   yName:'Tu nombre', fEmails:'Correos de tus amigos', writeEmail:'Escribir el correo', copy:'Copiar enlace', copied:'Enlace copiado.',
   giveH:'Aporta por <em>Boston.</em>', giveP:'Las donaciones pequeñas mantienen esta campaña en manos de los vecinos, no de los grandes donantes.',
@@ -67,7 +67,7 @@ ht: {
   lbl4:'02 / Konsènan Gio', aboutH:'Mwen koute anvan. <em>Apre sa nou bati l ansanm.</em>',
   about1:'Gio te vin Boston soti Kolonbi an 2006. Depi lè sa a, li pase jou li ak vwazen yo: li koute, li òganize e li travay ansanm ak yo sou sa ki enpòtan pou yo.',
  
-  f1:'Vwazen', f1s:'Li rete West Roxbury. Pitit li yo ale nan Lekòl Piblik Boston.', f2:'Òganizatè', f2s:'Li frape pòt e li chita sou tab kizin pou l tande sa moun bezwen.', f3:'Planifikatè', f3s:'Li ede vwazen planifye kay yo ka peye ak lari ki mache byen.',
+  f1:'Vwazen', f1s:'Li rete West Roxbury. Pitit li yo ale nan Lekòl Piblik Boston.', f2:'Òganizatè', f2s:'Li frape pòt e li chita sou tab kizin pou l tande sa moun bezwen.', f3:'Planifikatè', f3s:'Li ede vwazen planifye kay yo ka peye ak lari ki mache byen.', galH:'Nan kominote a', c1:'Ap pale ak Telemundo Boston', c2:'Fwa Mondyal Katye Latino a', c3:'Limbo nan Porchfest', c4:'Selebre ak vwazen yo', c5:'Yon mache pou lapè', c6:'Pri Devlopman Kominotè MACDC',
   lbl5:'03 / Pataje', shareH:'Di yon <em>zanmi.</em>', shareP:'Voye kanpay Gio a bay moun ki renmen Boston. Nou ekri imèl la, ou menm ou voye l.',
   yName:'Non w', fEmails:'Imèl zanmi w yo', writeEmail:'Ekri imèl la', copy:'Kopye lyen an', copied:'Lyen an kopye.',
   giveH:'Bay yon ti kontribisyon pou <em>Boston.</em>', giveP:'Ti don yo kenbe kanpay sa a nan men vwazen yo, pa nan men gwo donatè.',
@@ -107,7 +107,7 @@ pt: {
   lbl4:'02 / Sobre Gio', aboutH:'Primeiro eu escuto. <em>Depois construímos juntos.</em>',
   about1:'Gio chegou a Boston vindo da Colômbia em 2006. Desde então passa seus dias com os vizinhos: ouvindo, organizando e trabalhando juntos no que importa para eles.',
  
-  f1:'Vizinho', f1s:'Mora em West Roxbury. Seus filhos estudam nas Escolas Públicas de Boston.', f2:'Organizador', f2s:'Bate de porta em porta e senta à mesa da cozinha para ouvir o que as pessoas precisam.', f3:'Urbanista', f3s:'Ajuda os vizinhos a planejar moradias que possam pagar e ruas que funcionem.',
+  f1:'Vizinho', f1s:'Mora em West Roxbury. Seus filhos estudam nas Escolas Públicas de Boston.', f2:'Organizador', f2s:'Bate de porta em porta e senta à mesa da cozinha para ouvir o que as pessoas precisam.', f3:'Urbanista', f3s:'Ajuda os vizinhos a planejar moradias que possam pagar e ruas que funcionem.', galH:'Na comunidade', c1:'Conversando com a Telemundo Boston', c2:'Feira Mundial do Bairro Latino', c3:'Limbo no Porchfest', c4:'Celebrando com os vizinhos', c5:'Uma caminhada pela paz', c6:'Prêmio de Desenvolvimento Comunitário da MACDC',
   lbl5:'03 / Espalhe a notícia', shareH:'Conte para <em>um amigo.</em>', shareP:'Envie a campanha de Gio para quem se importa com Boston. Nós escrevemos o e-mail, você envia.',
   yName:'Seu nome', fEmails:'E-mails dos amigos', writeEmail:'Escrever o e-mail', copy:'Copiar link', copied:'Link copiado.',
   giveH:'Contribua por <em>Boston.</em>', giveP:'Pequenas doações mantêm esta campanha nas mãos dos vizinhos, não dos grandes doadores.',
@@ -147,7 +147,7 @@ zh: {
   lbl4:'02 / 關於 Gio', aboutH:'我先傾聽。<em>然後我們一起建設。</em>',
   about1:'Gio 於 2006 年從哥倫比亞來到波士頓。從那時起，他每天都和鄰居在一起：傾聽、組織，並一起處理大家關心的事。',
  
-  f1:'鄰居', f1s:'住在 West Roxbury，孩子就讀波士頓公立學校。', f2:'組織者', f2s:'上門拜訪，坐在廚房餐桌旁，聆聽大家的需要。', f3:'規劃師', f3s:'幫助鄰居規劃負擔得起的住房和好用的街道。',
+  f1:'鄰居', f1s:'住在 West Roxbury，孩子就讀波士頓公立學校。', f2:'組織者', f2s:'上門拜訪，坐在廚房餐桌旁，聆聽大家的需要。', f3:'規劃師', f3s:'幫助鄰居規劃負擔得起的住房和好用的街道。', galH:'在社區中', c1:'接受 Telemundo Boston 採訪', c2:'拉丁區世界博覽會', c3:'Porchfest 的林波舞', c4:'與鄰居一起慶祝', c5:'和平遊行', c6:'MACDC 社區發展獎',
   lbl5:'03 / 分享', shareH:'告訴<em>朋友。</em>', shareP:'把 Gio 的競選分享給關心波士頓的人。我們寫好電郵，你按送出。',
   yName:'你的姓名', fEmails:'朋友的電郵', writeEmail:'寫電郵', copy:'複製連結', copied:'已複製連結。',
   giveH:'為<em>波士頓</em>出一分力。', giveP:'小額捐款讓這場競選屬於鄰居，而不是大捐款人。',
@@ -187,7 +187,7 @@ vi: {
   lbl4:'02 / Về Gio', aboutH:'Tôi lắng nghe trước. <em>Rồi chúng ta cùng nhau xây dựng.</em>',
   about1:'Gio đến Boston từ Colombia năm 2006. Từ đó, anh dành mỗi ngày bên hàng xóm: lắng nghe, tổ chức và cùng nhau làm những việc họ quan tâm.',
  
-  f1:'Hàng xóm', f1s:'Sống ở West Roxbury. Các con anh học tại Trường Công lập Boston.', f2:'Người tổ chức', f2s:'Gõ cửa từng nhà và ngồi bên bàn bếp để nghe mọi người cần gì.', f3:'Quy hoạch', f3s:'Giúp hàng xóm lên kế hoạch cho nhà ở vừa túi tiền và đường phố tiện lợi.',
+  f1:'Hàng xóm', f1s:'Sống ở West Roxbury. Các con anh học tại Trường Công lập Boston.', f2:'Người tổ chức', f2s:'Gõ cửa từng nhà và ngồi bên bàn bếp để nghe mọi người cần gì.', f3:'Quy hoạch', f3s:'Giúp hàng xóm lên kế hoạch cho nhà ở vừa túi tiền và đường phố tiện lợi.', galH:'Trong cộng đồng', c1:'Trò chuyện với Telemundo Boston', c2:'Hội chợ Thế giới Khu Latinh', c3:'Nhảy limbo tại Porchfest', c4:'Ăn mừng cùng hàng xóm', c5:'Đi bộ vì hòa bình', c6:'Giải thưởng Phát triển Cộng đồng MACDC',
   lbl5:'03 / Lan tỏa', shareH:'Kể cho <em>bạn bè.</em>', shareP:'Gửi chiến dịch của Gio cho những người quan tâm đến Boston. Chúng tôi viết email, bạn bấm gửi.',
   yName:'Tên của bạn', fEmails:'Email của bạn bè', writeEmail:'Viết email', copy:'Sao chép liên kết', copied:'Đã sao chép liên kết.',
   giveH:'Góp sức cho <em>Boston.</em>', giveP:'Những khoản góp nhỏ giữ chiến dịch này thuộc về hàng xóm, không phải nhà tài trợ lớn.',
@@ -227,7 +227,7 @@ ru: {
   lbl4:'02 / О Gio', aboutH:'Сначала я слушаю. <em>Потом мы строим вместе.</em>',
   about1:'Gio приехал в Бостон из Колумбии в 2006 году. С тех пор он проводит дни с соседями: слушает, объединяет людей и вместе с ними решает то, что для них важно.',
  
-  f1:'Сосед', f1s:'Живёт в West Roxbury. Его дети учатся в государственных школах Бостона.', f2:'Организатор', f2s:'Ходит по домам и садится за кухонный стол, чтобы услышать, что нужно людям.', f3:'Градостроитель', f3s:'Помогает соседям планировать доступное жильё и удобные улицы.',
+  f1:'Сосед', f1s:'Живёт в West Roxbury. Его дети учатся в государственных школах Бостона.', f2:'Организатор', f2s:'Ходит по домам и садится за кухонный стол, чтобы услышать, что нужно людям.', f3:'Градостроитель', f3s:'Помогает соседям планировать доступное жильё и удобные улицы.', galH:'В сообществе', c1:'Интервью для Telemundo Boston', c2:'Всемирная ярмарка Латинского квартала', c3:'Лимбо на Porchfest', c4:'Праздник с соседями', c5:'Марш за мир', c6:'Премия MACDC за развитие сообществ',
   lbl5:'03 / Расскажите', shareH:'Расскажите <em>другу.</em>', shareP:'Отправьте кампанию Gio тем, кому небезразличен Бостон. Мы напишем письмо, вы нажмёте «отправить».',
   yName:'Ваше имя', fEmails:'Адреса друзей', writeEmail:'Написать письмо', copy:'Копировать ссылку', copied:'Ссылка скопирована.',
   giveH:'Поддержите <em>Бостон.</em>', giveP:'Небольшие пожертвования делают эту кампанию делом соседей, а не крупных спонсоров.',
